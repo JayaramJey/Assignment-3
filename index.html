@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="./script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h3>
+      To select a movie please click a movie from the dropdown movie and click
+      get
+    </h3>
+    <div>
+      <select id="movies">
+        <option value="634649">Spiderman No way home</option>
+        <option value="1726">Iron Man</option>
+        <option value="616037">Thor</option>
+        <option value="123025">Batman</option>
+        <option value="24428">Avengers Infinity War</option>
+        <option value="91314">Transformers: Age of extinction</option>
+        <option value="135397">Jurrasic World</option>
+        <option value="550988">Free Guy</option>
+        <option value="312221">Creed</option>
+        <option value="118340">Guardians of the Galaxy</option>
+      </select>
+      <button id="button" onclick="getSelectedOption()">Get</button>
+    </div>
+    <h1 id="title"></h1>
+    <h3 id="overview" class="clear"></h3>
+    <div id="container">
+      <h3 id="release-date"></h3>
+      <h3 id="popularity"></h3>
+      <h3 id="vote-average"></h3>
+      <h3 id="vote-count"></h3>
+      <h3 id="budget"></h3>
+      <h3 id="original-language"></h3>
+      <h3 id="genre"></h3>
+      <h3 id="but"></h3>
+      <img id="poster" src="" />
+      <iframe id="video" src=""></iframe>
+    </div>
+  </body>
+</html>
