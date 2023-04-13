@@ -1,22 +1,14 @@
 let api_key = "45f0db8e20f87e3e431aa1750076bb74";
 
-function getSelectedOption() {
+function getMovie() {
   const id = document.getElementById("movies").value;
-  //console.log(id);
   axios
     .get(
-      `
-    https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}&language=en-US`
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}&language=en-US&append_to_response=videos`
     )
-    .then(function (movieData) {
-      const movieInfo = movieData.data;
-      document.getElementById(
-        "poster"
-      ).src = `https://image.tmdb.org/t/p/original/${movieInfo.poster_path}`;
-
-      document.getElementById(
-        "title"
-      ).innerText = `Title of Movie: ${movieInfo.title}`;
+    .then(function (movieInformation) {
+      const movieInfo = movieInformation.data;
+      document.getElementById("title").innerText = movieInfo.title;
       document.getElementById("overview").innerText = `Overview: 
           ${movieInfo.overview}`;
       document.getElementById(
@@ -24,30 +16,40 @@ function getSelectedOption() {
       ).innerText = `Released: ${movieInfo.release_date}`;
       document.getElementById(
         "popularity"
-      ).innerText = `the popularity:${movieInfo.popularity}`;
+      ).innerText = `Popularity:${movieInfo.popularity}`;
       document.getElementById(
         "budget"
-      ).innerText = `The budget for this movie: $${movieInfo.budget}`;
+      ).innerText = `Budget for movie: $${movieInfo.budget}`;
       document.getElementById(
         "vote-average"
-      ).innerText = `The vote average is: $${movieInfo.vote_average}`;
+      ).innerText = `The vote average is: ${movieInfo.vote_average}`;
       document.getElementById(
         "vote-count"
-      ).innerText = `vote count: $${movieInfo.vote_count}`;
+      ).innerText = `vote count: ${movieInfo.vote_count}`;
       document.getElementById(
         "original-language"
       ).innerText = ` original language: ${movieInfo.original_language}`;
-      //document.getElementById(
-      //"genre"
-      //).innerHTML = ` original language: ${[...movieInfo.genres_ids]}`;
-      console.log(movieInfo);
-      const names = movieInfo.genres_names;
-      console.log(names);
+      document.getElementById(
+        "revenue"
+      ).innerText = `Revenue: $${movieInfo.revenue}`;
+      document.getElementById(
+        "run-time"
+      ).innerText = `Runtime: ${movieInfo.runtime}`;
 
-      // document.getElementById(
-      // "video"
-      //).src = `The budget for this movie: $${stuff.budget}`;
-
-      //document.getElementById("video").src=`Title of Movie: ${stuff.origin_country}`;
+      const u = [];
+      for (let i = 0; i < movieInfo.genres.length; i++) {
+        u[i] = [movieInfo.genres[i].name];
+      }
+      document.getElementById("genres").innerText = "Genres: " + u.join(", ");
+      const trailer = movieInfo.videos.results.filter((trailer) => {
+        return trailer.type === "Trailer";
+      });
+      document.getElementById("trailer").src = `https://www.youtube.com/embed/${
+        trailer.at(0).key
+      }`;
+      document.getElementById(
+        "poster"
+      ).src = `https://image.tmdb.org/t/p/original/${movieInfo.poster_path}`;
+      document.getElementById("poster").style.border = "solid white";
     });
 }
