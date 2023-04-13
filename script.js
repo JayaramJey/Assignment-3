@@ -8,7 +8,7 @@ function getMovie() {
     )
     .then(function (movieInformation) {
       const movieInfo = movieInformation.data;
-      document.getElementById("title").innerText = movieInfo.title;
+      document.getElementById("movie-name").innerText = movieInfo.title;
       document.getElementById("overview").innerText = `Overview: 
           ${movieInfo.overview}`;
       document.getElementById(
@@ -16,7 +16,7 @@ function getMovie() {
       ).innerText = `Released: ${movieInfo.release_date}`;
       document.getElementById(
         "popularity"
-      ).innerText = `Popularity:${movieInfo.popularity}`;
+      ).innerText = `Popularity: ${movieInfo.popularity}`;
       document.getElementById(
         "budget"
       ).innerText = `Budget for movie: $${movieInfo.budget}`;
@@ -34,7 +34,7 @@ function getMovie() {
       ).innerText = `Revenue: $${movieInfo.revenue}`;
       document.getElementById(
         "run-time"
-      ).innerText = `Runtime: ${movieInfo.runtime}`;
+      ).innerText = `Runtime: ${movieInfo.runtime} min`;
 
       const u = [];
       for (let i = 0; i < movieInfo.genres.length; i++) {

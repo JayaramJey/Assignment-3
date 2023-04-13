@@ -6,11 +6,12 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <h1 id="title">Movies Selector</h1>
     <h2 class="instructions">
       To select a movie please click a movie from the dropdown menu and click
       get
     </h2>
-    <div id="main">
+    <main>
       <div>
         <select id="movies">
           <option value="634649">Spiderman No way home</option>
@@ -26,7 +27,7 @@
         </select>
         <button id="button" onclick="getMovie()">Get Movie</button>
       </div>
-      <h1 id="title"></h1>
+      <h1 id="movie-name"></h1>
       <h3 id="overview" class="clear"></h3>
       <div id="items" class="grid">
         <h3 id="release-date"></h3>
@@ -43,6 +44,6 @@
         <iframe id="trailer" allowfullscreen></iframe>
         <img id="poster" />
       </div>
-    </div>
+    </main>
   </body>
 </html>

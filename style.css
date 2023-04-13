@@ -8,6 +8,12 @@ body {
   background-color: rgb(0, 0, 0);
   text-align: center;
   color: rgb(173, 148, 4);
+  font-family: math;
+}
+
+#title {
+  background-color: navy;
+  font-size: 5rem;
 }
 
 .instructions {
@@ -18,7 +24,7 @@ body {
   text-decoration: underline;
 }
 
-#main > * {
+main > * {
   margin: 1rem;
 }
 
@@ -45,8 +51,7 @@ body {
 }
 
 #double {
-  display: grid;
-  grid-template-columns: auto auto;
+  display: flex;
 }
 
 #double > * {
