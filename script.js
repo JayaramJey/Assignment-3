@@ -1,15 +1,15 @@
-import { key } from "./key.js";
+import { apiKey } from "./key.js";
 document.getElementById("button").addEventListener("click", getMovie);
 function getMovie() {
   const id = document.getElementById("movies").value;
   axios
     .get(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=${key}&language=en-US&append_to_response=videos`
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US&append_to_response=videos`
     )
     .then(function (movieInformation) {
       const movieInfo = movieInformation.data;
       document.getElementById("movie-name").innerText = movieInfo.title;
-      document.getElementById("overview").innerText = `Overview: 
+      document.getElementById("overview").innerText = `Overview:
           ${movieInfo.overview}`;
       document.getElementById(
         "release-date"
