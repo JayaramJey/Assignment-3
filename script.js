@@ -1,10 +1,10 @@
-let api_key = "45f0db8e20f87e3e431aa1750076bb74";
-
+import { key } from "./key.js";
+document.getElementById("button").addEventListener("click", getMovie);
 function getMovie() {
   const id = document.getElementById("movies").value;
   axios
     .get(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}&language=en-US&append_to_response=videos`
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${key}&language=en-US&append_to_response=videos`
     )
     .then(function (movieInformation) {
       const movieInfo = movieInformation.data;
