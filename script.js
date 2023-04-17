@@ -36,11 +36,12 @@ function getMovie() {
         "run-time"
       ).innerText = `Runtime: ${movieInfo.runtime} min`;
 
-      const u = [];
+      const genre = [];
       for (let i = 0; i < movieInfo.genres.length; i++) {
-        u[i] = [movieInfo.genres[i].name];
+        genre[i] = [movieInfo.genres[i].name];
       }
-      document.getElementById("genres").innerText = "Genres: " + u.join(", ");
+      document.getElementById("genres").innerText =
+        "Genres: " + genre.join(", ");
       const trailer = movieInfo.videos.results.filter((trailer) => {
         return trailer.type === "Trailer";
       });
