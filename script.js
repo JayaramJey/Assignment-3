@@ -9,8 +9,7 @@ function getMovie() {
     .then(function (movieInformation) {
       const movieInfo = movieInformation.data;
       document.getElementById("movie-name").innerText = movieInfo.title;
-      document.getElementById("overview").innerText = `Overview:
-          ${movieInfo.overview}`;
+      document.getElementById("overview").innerText = movieInfo.overview;
       document.getElementById(
         "release-date"
       ).innerText = `Released: ${movieInfo.release_date}`;
