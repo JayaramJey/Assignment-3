@@ -9,6 +9,7 @@ function getMovie() {
     .then(function (movieInformation) {
       const movieData = movieInformation.data;
       document.getElementById("movie-name").innerText = movieData.title;
+      document.getElementById("movie-name").style.textDecoration = "underline";
       document.getElementById("overview").innerText = movieData.overview;
       document.getElementById(
         "release-date"
