@@ -54,10 +54,6 @@ main > * {
   display: flex;
 }
 
-#double > * {
-  margin-block: 1rem;
-}
-
 #trailer {
   width: 40rem;
   margin-left: 5rem;
