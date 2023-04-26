@@ -25,10 +25,10 @@ function getMovie() {
       ).innerText = `The vote average is: ${movieData.vote_average}`;
       document.getElementById(
         "vote-count"
-      ).innerText = `vote count: ${movieData.vote_count}`;
+      ).innerText = `The vote count is: ${movieData.vote_count}`;
       document.getElementById(
         "original-language"
-      ).innerText = ` original language: ${movieData.original_language}`;
+      ).innerText = `Original language: ${movieData.original_language}`;
       document.getElementById(
         "revenue"
       ).innerText = `Revenue: $${movieData.revenue}`;
