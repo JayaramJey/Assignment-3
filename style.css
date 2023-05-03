@@ -35,16 +35,16 @@ main > * {
   color: rgb(173, 148, 4);
 }
 
-#items {
+#information {
   display: grid;
   grid-template-columns: auto auto auto;
 }
 
-#items > * {
+#information > * {
   margin: 1rem;
 }
 
-#double {
+#flex {
   display: flex;
 }
 
