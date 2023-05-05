@@ -35,7 +35,6 @@ function getMovie() {
       document.getElementById(
         "run-time"
       ).innerText = `Runtime: ${movieData.runtime} min`;
-
       const genre = [];
       for (let i = 0; i < movieData.genres.length; i++) {
         genre[i] = [movieData.genres[i].name];
